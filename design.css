@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    background-image: url(back.jpg);
+}
+.menu{
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 12%;
+}
+.btn{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 30px;
+    background-color: rgb(0,144,217);
+    color: white;
+}
+.btn:hover{
+    background-color: rgb(115,215,251);
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: grab;
+}
+.btn:onclick{
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
