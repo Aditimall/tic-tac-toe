@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.game-div{
+    display: flex;
+    margin: auto;
+}
+.game-cell{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    margin: 2px;
+}
