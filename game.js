@@ -1,4 +1,7 @@
 const boxes=document.getElementsByClassName("game-cell");
+const overlay=document.getElementById("overlay");
+const cover=document.getElementById("cover");
+
 const board=[];
 var ptr=0;
 for(let i=0;i<3;i++){
@@ -83,6 +86,16 @@ function minimax(isMax){
     }
 }
 
+function setOverlay(response){
+    cover.style.display="block";
+    overlay.style.display="flex";
+    overlay.innerHTML=response;
+}
+function removeOverlay(){
+    cover.style.display="none";
+    overlay.style.display="none";
+}
+
 for(let i=0;i<boxes.length;i++){
     const box=boxes[i];
     box.addEventListener("click",(e)=>{
@@ -107,8 +120,15 @@ for(let i=0;i<boxes.length;i++){
             board[move_row][move_col].innerHTML='O';
         let sc=evaluate();
         if(sc!=0||isOver()){
-            console.log("GAME OVER!!!");
-            alert("COMPLETED!!!");
+            if(sc>0){
+                setOverlay("YOU LOST");
+            }
+            else{
+                setOverlay("DRAW!!!");
+            }
+            setTimeout(()=>{
+                location.reload();
+            },2000);
         }
     });
 }
